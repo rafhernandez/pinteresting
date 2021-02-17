@@ -15,3 +15,7 @@ global.$ = global.jQuery = jQuery;
 window.$ = window.jQuery = jQuery;
 
 import 'bootstrap'
+
+$('h1').click(function() {
+    alert("hi");
+});
