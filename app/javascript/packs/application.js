@@ -8,10 +8,4 @@ require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
 
-var jQuery = require("jquery");
-require("popper.js")
-
-global.$ = global.jQuery = jQuery;
-window.$ = window.jQuery = jQuery;
-
 import 'bootstrap'
