@@ -10,6 +10,3 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 require('popper.js')
-
-window.jQuery = $;
-window.$ = $;
