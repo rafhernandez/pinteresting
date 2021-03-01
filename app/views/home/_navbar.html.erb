@@ -9,6 +9,9 @@
                 <li class="nav-item">
                     <%= link_to "About", home_about_path, class:"nav-link" %>
                 </li>
+                <li class="nav-item">
+                    <%= link_to "Pins", pins_path, class:"nav-link" %>
+                </li>
             </ul>
         </div>
 
@@ -38,6 +41,13 @@
                         <%= link_to "Sign up", new_user_registration_path, class:"dropdown-item" %>
                         <% end %>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <% if user_signed_in? %>
+                    <%= link_to "+", new_pin_path, class:"nav-link new-pin-btn" %>
+                    <% else %>
+                    <%= link_to "+", new_user_session_path, class:"nav-link new-pin-btn" %>
+                    <% end %>
                 </li>
             </ul>
             <!--
