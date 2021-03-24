@@ -1,3 +1,5 @@
+<%= render 'home/jumbotron' unless user_signed_in? %>
+
 <% if user_signed_in? %>
   <%= link_to new_pin_path, class: 'new-pin-btn-2', :action => 'go' do %>
     +<div>New Pin</div>
@@ -7,7 +9,6 @@
     +<div>New Pin</div>
   <% end %>
 <% end %>
-
 
 <div id="pins" data-masonry='{ "itemSelector": ".card", "isFitWidth": true }' class="transitions-enabled">
   <% @pins.each do |pin| %>
@@ -29,3 +30,5 @@
     </div>
   <% end %>
 </div>
+
+<%= will_paginate(@pins, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>

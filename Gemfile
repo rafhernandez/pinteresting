@@ -7,11 +7,13 @@ gem 'rails', '~> 6.1.1'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
-gem 'turbolinks', '~> 5'
+#gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'kt-paperclip', '~> 6.4', '>= 6.4.1'
 gem 'aws-sdk', '~> 3'
+gem 'will_paginate', '~> 3.3.0'
+gem 'bootstrap-will_paginate'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 

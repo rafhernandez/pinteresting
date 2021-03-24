@@ -1,13 +1,18 @@
-<p>
-  <%= image_tag @pin.image.url(:medium) %><br>
-  <strong>Description:</strong>
-  <%= @pin.description %><br>
-  <strong>Name:</strong>
-  <%= @pin.user.name %>
-</p>
+<div id="pin-view">
+  <div class="card">
+    <%= image_tag @pin.image.url %>
+    <div class="card-body">
+      <div class="pin-title"><%= @pin.description %></div>
+      <div class="pin-owner"><%= @pin.user.name %></div>
+    </div>
+    <div class="card-footer text-muted">
+      <% if @pin.user == current_user %>
+        <%= link_to 'Edit', edit_pin_path(@pin) %>
+        | 
+        <%= link_to 'Destroy', @pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
 
-<% if @pin.user == current_user %>
-  <%= link_to 'Edit', edit_pin_path(@pin) %>
-  <%= link_to 'Destroy', @pin, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-<%= link_to 'Back', pins_path %>
+  <%= link_to '← Go Back', root_path, class: 'btn btn-outline-primary' %></button>
+</div>
