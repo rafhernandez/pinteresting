@@ -10,7 +10,7 @@
   <% end %>
 <% end %>
 
-<div id="pins" data-masonry='{ "itemSelector": ".card", "isFitWidth": true }' class="transitions-enabled">
+<div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
     <div class="card">
       <%= link_to (image_tag pin.image.url(:medium), class: 'card-img-top'), pin %>
@@ -39,7 +39,7 @@
       itemSelector: '.card',
       isFitWidth: true
     });
-  });
+  };
 </script>
 
 <%= will_paginate(@pins, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
