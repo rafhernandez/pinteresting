@@ -10,6 +10,8 @@ gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'devise'
+gem 'kt-paperclip', '~> 6.4', '>= 6.4.1'
+gem 'aws-sdk', '~> 3'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
