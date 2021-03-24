@@ -31,4 +31,15 @@
   <% end %>
 </div>
 
+<script>
+  window.onload = function() {
+    var elem = document.querySelector('#pins');
+    var msnry = new Masonry( elem, {
+      // options
+      itemSelector: '.card',
+      isFitWidth: true
+    });
+  });
+</script>
+
 <%= will_paginate(@pins, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
