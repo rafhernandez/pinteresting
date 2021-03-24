@@ -122,7 +122,8 @@ nav.pagination {
 
 .pin-owner {
     font-size: 10px;
-    color: $primary;;
+    color: $primary;
+    margin-top: 10px;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -153,4 +154,4 @@ nav.pagination {
     .new-pin-btn {
         display: none;
     }
-} 
+}
