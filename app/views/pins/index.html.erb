@@ -1,29 +1,31 @@
-<h1>Pins</h1>
+<% if user_signed_in? %>
+  <%= link_to new_pin_path, class: 'new-pin-btn-2', :action => 'go' do %>
+    +<div>New Pin</div>
+  <% end %>
+<% else %>
+  <%= link_to new_user_session_path, class: 'new-pin-btn-2', :action => 'go' do %>
+    +<div>New Pin</div>
+  <% end %>
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @pins.each do |pin| %>
-      <tr>
-        <td>
-          <%= image_tag pin.image.url(:thumb) %>
-          <br>
-          <%= pin.description %>
-        </td>
-        <td><%= link_to 'Show', pin %></td>
-        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Pin', new_pin_path %>
+<div id="pins" data-masonry='{ "itemSelector": ".card", "isFitWidth": true }' class="transitions-enabled">
+  <% @pins.each do |pin| %>
+    <div class="card">
+      <%= link_to (image_tag pin.image.url(:medium), class: 'card-img-top'), pin %>
+      <div class="card-body">
+        <div class="pin-title"><%= pin.description %></div>
+        <div class="pin-owner"><%= pin.user.name %></div>
+      </div>
+      <div class="card-footer text-muted">
+      <%= link_to 'View', pin %>
+        <% if pin.user == current_user %>
+          |
+          <%= link_to 'Edit', edit_pin_path(pin) %>
+          | 
+          <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
